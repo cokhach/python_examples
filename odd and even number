@@ -1,0 +1,8 @@
+n = int(input('nhap so nguyen bat ky nho hon 100 : '))
+if n < 100:
+    if (n % 2) == 0:
+        if n in range(2,5) or n>20:
+            print('not Weird')
+        else: print('Weird')
+    else: print('Weird')
+else: print('chay va nhap lai so nguyen bat ky nho hon 100')  
