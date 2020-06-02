@@ -1,0 +1,12 @@
+n = int(input('nhap so luong sinh vien : '))
+d = {}
+for _ in range(n):
+    info = input('nhap thong tin sinh vien : ').split()
+    print(info[0])
+#    print(info[1:])
+    score = list(map(float, info[1:]))
+#    print(score)
+    d[info[0]] = sum(score) / float(len(score))
+    print(d)
+    print('{:.2f}'.format(d[input('nhap ten sinh vien can tra cuu : ')]))
+print(d[input()])
