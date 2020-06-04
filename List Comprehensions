@@ -1,0 +1,14 @@
+x = int(input('nhap chieu 1: '))
+y = int(input('nhap chieu 2: '))
+z = int(input('nhap chieu 3: '))
+n = int(input('nhap dieu kien: ')) 
+p = 0
+matrix = []
+for i in range (x + 1):
+    for j in range(y + 1):
+        for k in range(z + 1):
+            if i+j+k != n:
+                matrix.append([]) # them 1 dong vao cuoi ma tran
+                matrix[p] = [i,j,k]
+                p+=1 
+print(matrix)
