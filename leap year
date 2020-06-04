@@ -1,0 +1,18 @@
+def leap_year(year):
+    if year in range(1900,pow(10,5)):
+        if (year % 4) == 0:
+            if (year % 100) == 0:
+                if (year % 400) == 0:
+                    print('year is leap: TRUE')
+                else:
+                    print(' year is not leap: FALSE')
+            else:
+               print('year is leap: TRUE') 
+        else:
+            print(' year is not leap: FALSE')        
+    else:
+        print('re-load the year')
+    return(year)        
+
+nam = int(input('enter a year : '))
+leap_year(nam)
