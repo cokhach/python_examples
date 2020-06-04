@@ -2,3 +2,10 @@ n = int(input('enter a number : '))
 print(*range(1, n+1), sep='-')
 print(*(i for i in range(1, n+1)), sep='+')
 print(*range(n))
+
+The * operator is used for sequence unpacking. 
+It can take any iterable and pass unpacked components
+to a feeder function, in this case print. It works for
+print as this specific function can take an arbitrary
+number of arguments, e.g. try print(1, 2, 3, 4, 5, sep='').
+It will not, in contrast, work with list, which requires only one argument.
