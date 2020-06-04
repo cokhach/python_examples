@@ -9,27 +9,24 @@ def condition(m):
     return(m) 
     
 def matrix(B,m):
-    i = 0
-    while i in range(m):
+    flag = 1
+    for i in range(m):
         if B[i] not in range(-100,100):
             print('du lieu runner sai, nhap lai')
-            B = input('nhap thong tin runner cach nhau boi dau cach : ').split()
-            B = list(map(int,B[0:]))
-        else: i+=1
-    return(B)        
+            flag = 0
+    return(flag)        
 
 n = int(input('nhap so luong sinh vien : '))   
 condition(n)
-A = input('nhap thong tin runner cach nhau boi dau cach : ').split()
-A = list(map(int,A[0:]))
 t = 1
 while t:
-    X = matrix(A,n)
-    for j in range(len(A)):
-        if X[j] in range(-100,100):
-            t = 0
-
-Y = sorted(X)
+    A = input('nhap thong tin runner cach nhau boi dau cach : ').split()
+    A = list(map(int,A[0:]))
+    flag = matrix(A,n)
+    if flag == 1:
+        t = 0
+        
+Y = sorted(A)
 max_value = max(Y)
 print('gia tri lon nhat trong Y la : ', max_value)
 print(range(len(Y)))
