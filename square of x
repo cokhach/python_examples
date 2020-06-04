@@ -1,0 +1,4 @@
+n = int(input('nhap so nguyen vao day : '))
+for i in range(n):
+ print(i*i)
+# print(pow(i,2))
