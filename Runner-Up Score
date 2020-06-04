@@ -1,0 +1,45 @@
+def condition(m):
+    t = 1
+    while t:
+        if m not in range(2,10):
+            print('nhap lai so luong sinh vien tu 2 den 10')
+            m = int(input('nhap so luong sinh vien : '))
+        else:
+            t = 0
+    return(m) 
+    
+def matrix(B,m):
+    i = 0
+    while i in range(m):
+        if B[i] not in range(-100,100):
+            print('du lieu runner sai, nhap lai')
+            B = input('nhap thong tin runner cach nhau boi dau cach : ').split()
+            B = list(map(int,B[0:]))
+        else: i+=1
+    return(B)        
+
+n = int(input('nhap so luong sinh vien : '))   
+condition(n)
+A = input('nhap thong tin runner cach nhau boi dau cach : ').split()
+A = list(map(int,A[0:]))
+t = 1
+while t:
+    X = matrix(A,n)
+    for j in range(len(A)):
+        if X[j] in range(-100,100):
+            t = 0
+
+Y = sorted(X)
+max_value = max(Y)
+print('gia tri lon nhat trong Y la : ', max_value)
+print(range(len(Y)))
+
+Z = []
+p = 0
+for k in range(len(Y)):
+    if Y[k] != max_value:
+        Z.append([])
+        Z[p] = Y[k]
+        p+=1
+print(Z)
+print('Diem so cao thu hai - runner-up score la : ',max(Z))
