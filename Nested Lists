@@ -1,0 +1,41 @@
+def condition(m):
+    t = 1
+    while t:
+        if m not in range(2,6):
+            print('nhap lai so luong sinh vien tu 2 den 5')
+            m = int(input('nhap so luong sinh vien : '))
+        else:
+            t = 0
+    return(m) 
+n = int(input('nhap so luong sinh vien : '))
+condition(n)
+d = []
+e = []
+p = 0
+for _ in range(n):
+    name = input('nhap ten sinh vien : ')
+    score = float(input('nhap diem sinh vien: '))
+    d.append([]) # them 1 dong vao cuoi ma tran
+    d[p] = name
+    e.append([]) # them 1 dong vao cuoi ma tran
+    e[p] = score
+    p+=1
+    
+def second_smallest(numbers):
+    m1, m2 = float('inf'), float('inf')
+    for x in numbers:
+        if x <= m1:
+            m1, m2 = x, m1
+        elif x < m2:
+            m2 = x
+    return m2
+second_sm = second_smallest(e)  
+second_ind = []
+#p = 0
+for x in range(len(e)):
+    if e[x] == second_sm:
+        second_ind.append(x)
+print(second_ind)       
+for z in range(len(second_ind)):
+    inx = second_ind[z]
+    print(d[inx])
