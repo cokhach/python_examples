@@ -1,0 +1,43 @@
+def condition1(m):
+    flag = 1
+    if m not in range(2, 11):
+        print('So luong sinh vien tu 2 den 10, nhap lai')
+        flag = 0
+    return(flag)
+
+
+def condition2(mark):
+    flag = 1
+    p = 0
+    while p < len(mark):
+        if mark[p] not in range(0, 101):
+            print('Diem sinh vien tu 0 den 100, nhap lai')
+            flag = 0
+            p = 1000
+        else:
+            p += 1
+    return(flag)
+
+
+t = 1
+while t:
+    n = int(input('nhap so luong sinh vien : '))
+    f1 = condition1(n)
+    if f1 == 1:
+        t = 0
+
+
+d = {}
+t = 1
+while t <= n:
+    info = input('nhap thong tin sinh vien : ').split()
+    score = list(map(float, info[1:]))
+#   print(score)
+    f2 = condition2(score)
+    if f2 == 1:
+        d[info[0]] = sum(score) / float(len(score))
+        t += 1
+
+print(d)
+print('{:.2f}'.format(d[input('nhap ten sinh vien can tra cuu : ')]))
+# print(d[input()])
